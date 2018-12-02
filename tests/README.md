@@ -1,8 +1,8 @@
 # BPFtrace Tests
 
-There is 2 test suite in the project.
+There are two test suites in the project.
 
-## Unit test
+## Unit tests
 
 These tests can be run with the `bpftrace_test` executable.
 
@@ -10,9 +10,8 @@ The code generation tests are based on the output of LLVM 5, so may give errors 
 
 `bpftrace_test --gtest_filter=-codegen*`
 
-## Runtime
+## Runtime tests
 
-  Runtime tests will call bpftrace executable.
-  * Default run: `sudo make runtime-tests` inside your build folder
-  * Alternative Run: `sudo ./tests/runtime-tests.sh` inside your build folder
-  * Change path to bpftrace executable: Edit the `/etc/environment` file by adding the variable `BPFTRACE_PATH=path/to/bpftrace`
+  Runtime tests will call the bpftrace executable.
+  * Run: `sudo make runtime-tests` inside your build folder
+  * By default, runtime-tests will look for the executable in the build folder. You can set a value to the environment variable `BPFTRACE_RUNTIME_TEST_EXECUTABLE` to customize it

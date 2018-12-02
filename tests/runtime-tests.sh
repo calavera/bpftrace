@@ -4,8 +4,7 @@ set -e;
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
-BPFTRACE_RUNTIME=${BPFTRACE_RUNTIME:-$DIR/../src/bpftrace};
-export BPFTRACE_RUNTIME;
+BPFTRACE_RUNTIME_TEST_EXECUTABLE=${BPFTRACE_RUNTIME_TEST_EXECUTABLE:-$DIR/../src/};
+export BPFTRACE_RUNTIME_TEST_EXECUTABLE;
 
-cd $DIR/runtime/runtime;
-python -W ignore -m unittest discover --pattern=*.py;
+python main.py;
